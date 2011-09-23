@@ -2,6 +2,8 @@ module Nestling
   class Collection < Array
     attr_accessor :results, :start, :session_id, :type
 
+    alias :total :results
+
     def initialize(options = {}, *args)
       options = Nestling::Hash.new(options).symbolize_keys!
       @results    = options[:results] || options[:total]

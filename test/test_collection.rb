@@ -45,6 +45,13 @@ class TestErrors < MiniTest::Unit::TestCase
     assert_equal 23, Collection.new(@sym_options_with_total).results
   end
 
+  def test_collection_has_total_accessor_for_results
+    assert_equal 10, Collection.new(@str_options).total
+    assert_equal 10, Collection.new(@sym_options).total
+    assert_equal 23, Collection.new(@str_options_with_total).total
+    assert_equal 23, Collection.new(@sym_options_with_total).total
+  end
+
   def test_collection_assigns_start
     assert_equal 2, Collection.new(@str_options).start
     assert_equal 2, Collection.new(@sym_options).start
