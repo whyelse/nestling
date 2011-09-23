@@ -6,7 +6,7 @@ require 'cgi'
 require 'date'
 
 # gems
-require 'json'
+require 'multi_json'
 
 # internal
 require 'nestling/version'

@@ -8,7 +8,7 @@ def stub_http_get(ret)
 end
 
 def expect_request(resp, req, opts = nil)
-  resp = JSON.parse(resp)
+  resp = MultiJson.decode(resp)
   if opts
     Client.any_instance.expects(:get).with(req, opts).returns(resp)
   else

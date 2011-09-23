@@ -68,7 +68,7 @@ class TestClient < MiniTest::Unit::TestCase
       }
     EOS
     stub_http_get response
-    assert_equal JSON.parse(response), Client.new('foo').get('bar')
+    assert_equal MultiJson.decode(response), Client.new('foo').get('bar')
   end
 
   def test_sends_user_agent
