@@ -6,10 +6,10 @@ module Nestling
     USER_AGENT = "Nestling/#{Version::STRING}"
     DEFAULT_PARAMS = { :format => 'json' }
 
-    def initialize(api_key = Nestling.api_key)
+    def initialize(api_key = nil)
       @http = Net::HTTP.new(HOST)
-      @api_key = api_key
-      @default_params = { :api_key => api_key }.merge!(DEFAULT_PARAMS)
+      @api_key = api_key || Nestling.api_key
+      @default_params = { :api_key => @api_key }.merge!(DEFAULT_PARAMS)
     end
 
     def artist(id)
