@@ -10,9 +10,9 @@ end
 def expect_request(resp, req, opts = nil)
   resp = MultiJson.decode(resp)
   if opts
-    Client.any_instance.expects(:get).with(req, opts).returns(resp)
+    Nestling::Client.any_instance.expects(:get).with(req, opts).returns(resp)
   else
-    Client.any_instance.expects(:get).with(req, anything).returns(resp)
+    Nestling::Client.any_instance.expects(:get).with(req, anything).returns(resp)
   end
 end
 
