@@ -72,8 +72,8 @@ class TestClient < MiniTest::Unit::TestCase
   end
 
   def test_sends_user_agent
-    Net::HTTP.any_instance.expects(:get)
-      .with(anything, { 'User-Agent' => Client::USER_AGENT} )
+    Net::HTTP.any_instance.expects(:get) \
+      .with(anything, { 'User-Agent' => Client::USER_AGENT} ) \
       .returns([{}, <<-EOS
       {
         "response": {
