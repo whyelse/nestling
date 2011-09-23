@@ -1,6 +1,6 @@
 module Nestling
   class Collection < Array
-    attr_accessor :results, :start, :session_id, :type
+    attr_reader :results, :start, :session_id, :type
 
     alias :total :results
 
