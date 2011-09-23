@@ -22,13 +22,13 @@ class TestClient < MiniTest::Unit::TestCase
   def test_default_api_key
     Nestling.api_key = nil # sanity
     Nestling.api_key = 'bar'
-    assert_equal Client.new.api_key, 'bar'
+    assert_equal 'bar', Client.new.api_key
   end
 
   def test_default_api_key_through_namespace_module
     Nestling.api_key = nil # sanity
     Nestling.api_key = 'baz'
-    assert_equal Nestling.new.api_key, 'baz'
+    assert_equal 'baz', Nestling.new.api_key
   end
 
   def test_artist_returns_artist_object
