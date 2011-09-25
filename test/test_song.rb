@@ -3,8 +3,6 @@ require File.join(File.dirname(__FILE__), 'helper')
 class TestSong < MiniTest::Unit::TestCase
   include Nestling
 
-  METHODS = Song::METHODS
-
   def setup
     @song = Nestling.new('foo').song
   end
@@ -17,26 +15,124 @@ class TestSong < MiniTest::Unit::TestCase
     assert_equal "song/", Song::METHOD_PREFIX
   end
 
-  def test_number_of_methods
-    assert_equal 3, METHODS.length
+  def test_search_method
+    assert_respond_to @song, :search
   end
 
-  def test_search
-    assert METHODS[:search][:collection]
-    assert_equal "songs", METHODS[:search][:key]
-    assert @song.respond_to?(:search)
+  def test_search_returns_collection
+    json = <<-EOS
+      {"response": {
+        "status": {
+          "code": "0",
+          "message": "Success",
+          "version": "4.2"
+        },
+        "songs": [{
+          "foo": "bar"
+        }]
+      }}
+    EOS
+    expect_request json, "#{Nestling::Song::METHOD_PREFIX}search"
+    response = @song.search
+    assert_kind_of Nestling::Collection, response
+    assert_equal 'bar', response[0][:foo]
   end
 
-  def test_profile
-    assert METHODS[:profile][:collection]
-    assert_equal "songs", METHODS[:profile][:key]
-    assert @song.respond_to?(:profile)
+  def test_search_passes_options
+    json = <<-EOS
+      {"response": {
+        "status": {
+          "code": "0",
+          "message": "Success",
+          "version": "4.2"
+        },
+        "songs": [{
+          "foo": "bar"
+        }]
+      }}
+    EOS
+    expect_request json, "#{Nestling::Song::METHOD_PREFIX}search", { :foo => :bar }
+    @song.search :foo => :bar
   end
 
-  def test_identify
-    assert METHODS[:identify][:collection]
-    assert_equal "songs", METHODS[:identify][:key]
-    assert @song.respond_to?(:identify)
+  def test_profile_method
+    assert_respond_to @song, :profile
+  end
+
+  def test_profile_returns_collection
+    json = <<-EOS
+      {"response": {
+        "status": {
+          "code": "0",
+          "message": "Success",
+          "version": "4.2"
+        },
+        "songs": [{
+          "foo": "bar"
+        }]
+      }}
+    EOS
+    expect_request json, "#{Nestling::Song::METHOD_PREFIX}profile"
+    response = @song.profile
+    assert_kind_of Nestling::Collection, response
+    assert_equal 'bar', response[0][:foo]
+  end
+
+  def test_profile_passes_options
+    json = <<-EOS
+      {"response": {
+        "status": {
+          "code": "0",
+          "message": "Success",
+          "version": "4.2"
+        },
+        "songs": [{
+          "foo": "bar"
+        }]
+      }}
+    EOS
+    expect_request json, "#{Nestling::Song::METHOD_PREFIX}profile", { :foo => :bar }
+    @song.profile :foo => :bar
+  end
+
+  def test_identify_method
+    assert_respond_to @song, :identify
+  end
+
+  def test_identify_returns_collection
+    json = <<-EOS
+      {"response": {
+        "status": {
+          "code": "0",
+          "message": "Success",
+          "version": "4.2"
+        },
+        "songs": [{
+          "foo": "bar"
+        }]
+      }}
+    EOS
+    expect_request json, "#{Nestling::Song::METHOD_PREFIX}identify"
+    response = @song.identify
+    assert_kind_of Nestling::Collection, response
+    assert_equal 'bar', response[0][:foo]
+  end
+
+  def test_identify_passes_options
+    json = <<-EOS
+      {"response": {
+        "status": {
+          "code": "0",
+          "message": "Success",
+          "version": "4.2"
+        },
+        "songs": [{
+          "foo": "bar"
+        }]
+      }}
+    EOS
+    expect_request json, "#{Nestling::Song::METHOD_PREFIX}identify", { :foo => :bar }
+    @song.identify :foo => :bar
   end
 end
 
