@@ -2,11 +2,10 @@ module Nestling
   class Track < Base
     METHOD_PREFIX = "track/"
 
-    METHODS = {
+    define_api_methods({
       :profile  => { :collection => false, :key => "track" },
-    }
+    })
 
-    define_api_methods METHODS
   end
 end
 

@@ -4,7 +4,7 @@ module Nestling
 
     METHOD_PREFIX = "artist/"
 
-    METHODS = {
+    define_api_methods({
       :biographies => { :collection => true },
       :blogs       => { :collection => true },
       :familiarity => { :collection => false, :key => "artist" },
@@ -24,9 +24,7 @@ module Nestling
       :top_terms   => { :collection => true, :key => "terms" },
       :urls        => { :collection => false },
       :video       => { :collection => true }
-    }
-
-    define_api_methods METHODS
+    })
 
     def initialize(name, client)
       name.kind_of?(::Hash) ? @id = name[:id] : @name = name

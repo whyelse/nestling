@@ -3,7 +3,6 @@ module Nestling
     attr_reader :client
 
     METHOD_PREFIX = ""
-    METHODS       = {}
 
     class << self
       def define_api_methods(methods)
