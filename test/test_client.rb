@@ -74,7 +74,7 @@ class TestClient < MiniTest::Unit::TestCase
   def test_sends_user_agent
     Net::HTTP.any_instance.expects(:get) \
       .with(anything, { 'User-Agent' => Client::USER_AGENT} ) \
-      .returns([{}, <<-EOS
+      .returns( OpenStruct.new({:body =>  <<-EOS
       {
         "response": {
           "status": {
@@ -85,7 +85,7 @@ class TestClient < MiniTest::Unit::TestCase
         }
       }
       EOS
-      ])
+      }))
     Client.new('foo').get('bar')
   end
 
