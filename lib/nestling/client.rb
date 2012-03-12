@@ -34,7 +34,8 @@ module Nestling
 
     def get(meth, params = {})
       path = "/api/v4/#{meth}?" << convert_params(params)
-      response, data = @http.get(path, {'User-Agent' => USER_AGENT})
+      response, data = @http.get_response(path, {'User-Agent' => USER_AGENT})
+      puts "!!!!!!!! response #{response.inspect}"
       hash = MultiJson.decode(data)
 
       if (code = hash["response"]["status"]["code"].to_i) != 0
