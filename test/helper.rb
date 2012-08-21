@@ -10,7 +10,7 @@ def stub_http_get(ret)
 end
 
 def expect_request(resp, req, opts = nil)
-  resp = MultiJson.decode(resp)
+  resp = MultiJson.load(resp)
   if opts
     Nestling::Client.any_instance.expects(:get).with(req, opts).returns(resp)
   else
