@@ -23,7 +23,8 @@ module Nestling
       :top_hottt   => { :collection => true, :key => "artists" },
       :top_terms   => { :collection => true, :key => "terms" },
       :urls        => { :collection => false },
-      :video       => { :collection => true }
+      :video       => { :collection => true },
+      :twitter     => { :collection => false, :key => 'artist' }
     })
 
     def initialize(name, client)
