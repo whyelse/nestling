@@ -56,7 +56,7 @@ class TestArtist < MiniTest::Unit::TestCase
   def test_biographies_method
     assert_respond_to @artist, :biographies
   end
-  
+
   def test_biographies_returns_collection
     json = <<-EOS
       {"response": {
@@ -75,7 +75,7 @@ class TestArtist < MiniTest::Unit::TestCase
     assert_kind_of Nestling::Collection, response
     assert_equal 'bar', response[0][:foo]
   end
-  
+
   def test_biographies_passes_options
     json = <<-EOS
       {"response": {
@@ -92,11 +92,11 @@ class TestArtist < MiniTest::Unit::TestCase
     expect_request json, "#{Nestling::Artist::METHOD_PREFIX}biographies", { :foo => :bar, :name => 'bar' }
     @artist.biographies :foo => :bar
   end
-  
+
   def test_blogs_method
     assert_respond_to @artist, :blogs
   end
-  
+
   def test_blogs_returns_collection
     json = <<-EOS
       {"response": {
@@ -115,7 +115,7 @@ class TestArtist < MiniTest::Unit::TestCase
     assert_kind_of Nestling::Collection, response
     assert_equal 'bar', response[0][:foo]
   end
-  
+
   def test_blogs_passes_options
     json = <<-EOS
       {"response": {
@@ -132,11 +132,11 @@ class TestArtist < MiniTest::Unit::TestCase
     expect_request json, "#{Nestling::Artist::METHOD_PREFIX}blogs", { :foo => :bar, :name => 'bar' }
     @artist.blogs :foo => :bar
   end
-  
+
   def test_familiarity_method
     assert_respond_to @artist, :familiarity
   end
-  
+
   def test_familiarity_returns_hash
     json = <<-EOS
       {"response": {
@@ -155,7 +155,7 @@ class TestArtist < MiniTest::Unit::TestCase
     assert_kind_of Nestling::Hash, response
     assert_equal 'bar', response[:foo]
   end
-  
+
   def test_familiarity_passes_options
     json = <<-EOS
       {"response": {
@@ -172,11 +172,11 @@ class TestArtist < MiniTest::Unit::TestCase
     expect_request json, "#{Nestling::Artist::METHOD_PREFIX}familiarity", { :foo => :bar, :name => 'bar' }
     @artist.familiarity :foo => :bar
   end
-  
+
   def test_hotttnesss_method
     assert_respond_to @artist, :hotttnesss
   end
-  
+
   def test_hotttnesss_returns_hash
     json = <<-EOS
       {"response": {
@@ -195,7 +195,7 @@ class TestArtist < MiniTest::Unit::TestCase
     assert_kind_of Nestling::Hash, response
     assert_equal 'bar', response[:foo]
   end
-  
+
   def test_hotttnesss_passes_options
     json = <<-EOS
       {"response": {
@@ -212,11 +212,11 @@ class TestArtist < MiniTest::Unit::TestCase
     expect_request json, "#{Nestling::Artist::METHOD_PREFIX}hotttnesss", { :foo => :bar, :name => 'bar' }
     @artist.hotttnesss :foo => :bar
   end
-  
+
   def test_twitter_method
     assert_respond_to @artist, :twitter
   end
-  
+
   def test_twitter_returns_hash
     json = <<-EOS
       {"response": {
@@ -235,7 +235,7 @@ class TestArtist < MiniTest::Unit::TestCase
     assert_kind_of Nestling::Hash, response
     assert_equal 'bar', response[:foo]
   end
-  
+
   def test_twitter_passes_options
     json = <<-EOS
       {"response": {
@@ -252,11 +252,11 @@ class TestArtist < MiniTest::Unit::TestCase
     expect_request json, "#{Nestling::Artist::METHOD_PREFIX}twitter", { :foo => :bar, :name => 'bar' }
     @artist.twitter :foo => :bar
   end
-  
+
   def test_images_method
     assert_respond_to @artist, :images
   end
-  
+
   def test_images_returns_collection
     json = <<-EOS
       {"response": {
@@ -275,7 +275,7 @@ class TestArtist < MiniTest::Unit::TestCase
     assert_kind_of Nestling::Collection, response
     assert_equal 'bar', response[0][:foo]
   end
-  
+
   def test_images_passes_options
     json = <<-EOS
       {"response": {
@@ -292,11 +292,11 @@ class TestArtist < MiniTest::Unit::TestCase
     expect_request json, "#{Nestling::Artist::METHOD_PREFIX}images", { :foo => :bar, :name => 'bar' }
     @artist.images :foo => :bar
   end
-  
+
   def test_list_terms_method
     assert_respond_to @artist, :list_terms
   end
-  
+
   def test_list_terms_returns_collection
     json = <<-EOS
       {"response": {
@@ -315,7 +315,7 @@ class TestArtist < MiniTest::Unit::TestCase
     assert_kind_of Nestling::Collection, response
     assert_equal 'bar', response[0][:foo]
   end
-  
+
   def test_list_terms_passes_options
     json = <<-EOS
       {"response": {
@@ -332,11 +332,11 @@ class TestArtist < MiniTest::Unit::TestCase
     expect_request json, "#{Nestling::Artist::METHOD_PREFIX}list_terms", { :foo => :bar, :name => 'bar' }
     @artist.list_terms :foo => :bar
   end
-  
+
   def test_news_method
     assert_respond_to @artist, :news
   end
-  
+
   def test_news_returns_collection
     json = <<-EOS
       {"response": {
@@ -355,7 +355,7 @@ class TestArtist < MiniTest::Unit::TestCase
     assert_kind_of Nestling::Collection, response
     assert_equal 'bar', response[0][:foo]
   end
-  
+
   def test_news_passes_options
     json = <<-EOS
       {"response": {
@@ -372,11 +372,11 @@ class TestArtist < MiniTest::Unit::TestCase
     expect_request json, "#{Nestling::Artist::METHOD_PREFIX}news", { :foo => :bar, :name => 'bar' }
     @artist.news :foo => :bar
   end
-  
+
   def test_profile_method
     assert_respond_to @artist, :profile
   end
-  
+
   def test_profile_returns_hash
     json = <<-EOS
       {"response": {
@@ -395,7 +395,7 @@ class TestArtist < MiniTest::Unit::TestCase
     assert_kind_of Nestling::Hash, response
     assert_equal 'bar', response[:foo]
   end
-  
+
   def test_profile_passes_options
     json = <<-EOS
       {"response": {
@@ -412,11 +412,11 @@ class TestArtist < MiniTest::Unit::TestCase
     expect_request json, "#{Nestling::Artist::METHOD_PREFIX}profile", { :foo => :bar, :name => 'bar' }
     @artist.profile :foo => :bar
   end
-  
+
   def test_reviews_method
     assert_respond_to @artist, :reviews
   end
-  
+
   def test_reviews_returns_collection
     json = <<-EOS
       {"response": {
@@ -435,7 +435,7 @@ class TestArtist < MiniTest::Unit::TestCase
     assert_kind_of Nestling::Collection, response
     assert_equal 'bar', response[0][:foo]
   end
-  
+
   def test_reviews_passes_options
     json = <<-EOS
       {"response": {
@@ -452,11 +452,11 @@ class TestArtist < MiniTest::Unit::TestCase
     expect_request json, "#{Nestling::Artist::METHOD_PREFIX}reviews", { :foo => :bar, :name => 'bar' }
     @artist.reviews :foo => :bar
   end
-  
+
   def test_search_method
     assert_respond_to @artist, :search
   end
-  
+
   def test_search_returns_collection
     json = <<-EOS
       {"response": {
@@ -475,7 +475,7 @@ class TestArtist < MiniTest::Unit::TestCase
     assert_kind_of Nestling::Collection, response
     assert_equal 'bar', response[0][:foo]
   end
-  
+
   def test_search_passes_options
     json = <<-EOS
       {"response": {
@@ -492,11 +492,11 @@ class TestArtist < MiniTest::Unit::TestCase
     expect_request json, "#{Nestling::Artist::METHOD_PREFIX}search", { :foo => :bar, :name => 'bar' }
     @artist.search :foo => :bar
   end
-  
+
   def test_extract_method
     assert_respond_to @artist, :extract
   end
-  
+
   def test_extract_returns_collection
     json = <<-EOS
       {"response": {
@@ -515,7 +515,7 @@ class TestArtist < MiniTest::Unit::TestCase
     assert_kind_of Nestling::Collection, response
     assert_equal 'bar', response[0][:foo]
   end
-  
+
   def test_extract_passes_options
     json = <<-EOS
       {"response": {
@@ -532,11 +532,11 @@ class TestArtist < MiniTest::Unit::TestCase
     expect_request json, "#{Nestling::Artist::METHOD_PREFIX}extract", { :foo => :bar, :name => 'bar' }
     @artist.extract :foo => :bar
   end
-  
+
   def test_songs_method
     assert_respond_to @artist, :songs
   end
-  
+
   def test_songs_returns_collection
     json = <<-EOS
       {"response": {
@@ -555,7 +555,7 @@ class TestArtist < MiniTest::Unit::TestCase
     assert_kind_of Nestling::Collection, response
     assert_equal 'bar', response[0][:foo]
   end
-  
+
   def test_songs_passes_options
     json = <<-EOS
       {"response": {
@@ -572,11 +572,11 @@ class TestArtist < MiniTest::Unit::TestCase
     expect_request json, "#{Nestling::Artist::METHOD_PREFIX}songs", { :foo => :bar, :name => 'bar' }
     @artist.songs :foo => :bar
   end
-  
+
   def test_similar_method
     assert_respond_to @artist, :similar
   end
-  
+
   def test_similar_returns_collection
     json = <<-EOS
       {"response": {
@@ -595,7 +595,7 @@ class TestArtist < MiniTest::Unit::TestCase
     assert_kind_of Nestling::Collection, response
     assert_equal 'bar', response[0][:foo]
   end
-  
+
   def test_similar_passes_options
     json = <<-EOS
       {"response": {
@@ -612,11 +612,11 @@ class TestArtist < MiniTest::Unit::TestCase
     expect_request json, "#{Nestling::Artist::METHOD_PREFIX}similar", { :foo => :bar, :name => 'bar' }
     @artist.similar :foo => :bar
   end
-  
+
   def test_suggest_method
     assert_respond_to @artist, :suggest
   end
-  
+
   def test_suggest_returns_collection
     json = <<-EOS
       {"response": {
@@ -635,7 +635,7 @@ class TestArtist < MiniTest::Unit::TestCase
     assert_kind_of Nestling::Collection, response
     assert_equal 'bar', response[0][:foo]
   end
-  
+
   def test_suggest_passes_options
     json = <<-EOS
       {"response": {
@@ -652,11 +652,11 @@ class TestArtist < MiniTest::Unit::TestCase
     expect_request json, "#{Nestling::Artist::METHOD_PREFIX}suggest", { :foo => :bar, :name => 'bar' }
     @artist.suggest :foo => :bar
   end
-  
+
   def test_terms_method
     assert_respond_to @artist, :terms
   end
-  
+
   def test_terms_returns_collection
     json = <<-EOS
       {"response": {
@@ -675,7 +675,7 @@ class TestArtist < MiniTest::Unit::TestCase
     assert_kind_of Nestling::Collection, response
     assert_equal 'bar', response[0][:foo]
   end
-  
+
   def test_terms_passes_options
     json = <<-EOS
       {"response": {
@@ -692,11 +692,11 @@ class TestArtist < MiniTest::Unit::TestCase
     expect_request json, "#{Nestling::Artist::METHOD_PREFIX}terms", { :foo => :bar, :name => 'bar' }
     @artist.terms :foo => :bar
   end
-  
+
   def test_top_hottt_method
     assert_respond_to @artist, :top_hottt
   end
-  
+
   def test_top_hottt_returns_collection
     json = <<-EOS
       {"response": {
@@ -715,7 +715,7 @@ class TestArtist < MiniTest::Unit::TestCase
     assert_kind_of Nestling::Collection, response
     assert_equal 'bar', response[0][:foo]
   end
-  
+
   def test_top_hottt_passes_options
     json = <<-EOS
       {"response": {
@@ -732,11 +732,11 @@ class TestArtist < MiniTest::Unit::TestCase
     expect_request json, "#{Nestling::Artist::METHOD_PREFIX}top_hottt", { :foo => :bar, :name => 'bar' }
     @artist.top_hottt :foo => :bar
   end
-  
+
   def test_top_terms_method
     assert_respond_to @artist, :top_terms
   end
-  
+
   def test_top_terms_returns_collection
     json = <<-EOS
       {"response": {
@@ -755,7 +755,7 @@ class TestArtist < MiniTest::Unit::TestCase
     assert_kind_of Nestling::Collection, response
     assert_equal 'bar', response[0][:foo]
   end
-  
+
   def test_top_terms_passes_options
     json = <<-EOS
       {"response": {
@@ -772,11 +772,11 @@ class TestArtist < MiniTest::Unit::TestCase
     expect_request json, "#{Nestling::Artist::METHOD_PREFIX}top_terms", { :foo => :bar, :name => 'bar' }
     @artist.top_terms :foo => :bar
   end
-  
+
   def test_urls_method
     assert_respond_to @artist, :urls
   end
-  
+
   def test_urls_returns_hash
     json = <<-EOS
       {"response": {
@@ -795,7 +795,7 @@ class TestArtist < MiniTest::Unit::TestCase
     assert_kind_of Nestling::Hash, response
     assert_equal 'bar', response[:foo]
   end
-  
+
   def test_urls_passes_options
     json = <<-EOS
       {"response": {
@@ -812,11 +812,11 @@ class TestArtist < MiniTest::Unit::TestCase
     expect_request json, "#{Nestling::Artist::METHOD_PREFIX}urls", { :foo => :bar, :name => 'bar' }
     @artist.urls :foo => :bar
   end
-  
+
   def test_video_method
     assert_respond_to @artist, :video
   end
-  
+
   def test_video_returns_collection
     json = <<-EOS
       {"response": {
@@ -835,7 +835,7 @@ class TestArtist < MiniTest::Unit::TestCase
     assert_kind_of Nestling::Collection, response
     assert_equal 'bar', response[0][:foo]
   end
-  
+
   def test_video_passes_options
     json = <<-EOS
       {"response": {
