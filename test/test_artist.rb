@@ -213,6 +213,46 @@ class TestArtist < MiniTest::Unit::TestCase
     @artist.hotttnesss :foo => :bar
   end
   
+  def test_twitter_method
+    assert_respond_to @artist, :twitter
+  end
+  
+  def test_twitter_returns_hash
+    json = <<-EOS
+      {"response": {
+        "status": {
+          "code": "0",
+          "message": "Success",
+          "version": "4.2"
+        },
+        "artist": {
+          "foo": "bar"
+        }
+      }}
+    EOS
+    expect_request json, "#{Nestling::Artist::METHOD_PREFIX}twitter"
+    response = @artist.twitter
+    assert_kind_of Nestling::Hash, response
+    assert_equal 'bar', response[:foo]
+  end
+  
+  def test_twitter_passes_options
+    json = <<-EOS
+      {"response": {
+        "status": {
+          "code": "0",
+          "message": "Success",
+          "version": "4.2"
+        },
+        "artist": {
+          "foo": "bar"
+        }
+      }}
+    EOS
+    expect_request json, "#{Nestling::Artist::METHOD_PREFIX}twitter", { :foo => :bar, :name => 'bar' }
+    @artist.twitter :foo => :bar
+  end
+  
   def test_images_method
     assert_respond_to @artist, :images
   end
