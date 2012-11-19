@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.email       = ["tob@tobiassvensson.co.uk"]
   s.homepage    = "http://github.com/tobiassvn/nestling"
   s.summary     = %q{Ruby wrapper for the EchoNest API}
-  s.description = %q{Ruby wrapper for the EchoNest API}
+  s.description = s.summary
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
