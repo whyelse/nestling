@@ -18,8 +18,5 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   s.add_dependency "multi_json", "~> 1.3.7"
-  s.add_development_dependency "rake", "~> 0.9"
-  s.add_development_dependency "minitest", "~> 2.6.0"
-  s.add_development_dependency "mocha", "~> 0.9.12"
 end
 
