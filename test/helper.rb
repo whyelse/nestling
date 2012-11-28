@@ -1,7 +1,7 @@
 require File.join(File.dirname(__FILE__), '..', 'lib', 'nestling')
 
 require 'minitest/autorun'
-require 'mocha'
+require 'mocha/setup'
 require 'ostruct'
 
 def stub_http_get(ret)
